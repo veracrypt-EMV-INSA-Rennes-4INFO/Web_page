@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>Dimension by HTML5 UP</title>
+    <title>EMVC</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -38,10 +38,10 @@
         <nav>
           <ul>
             <li>
-              <a href="#intro"> <b>Contexte</b></a>
+              <a href="#contexte"> <b>Contexte</b></a>
             </li>
             <li>
-              <a href="#work"><b>Objectifs</b></a>
+              <a href="#objectif"><b>Objectif</b></a>
             </li>
             <li>
               <a href="#about"><b>Implémentation</b></a>
@@ -59,50 +59,63 @@
       <!-- Main -->
       <div id="main">
         <!-- Intro -->
-        <article id="intro">
-          <h2 class="major">Intro</h2>
-          <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+        <article id="contexte">
+          <h2 class="major">Contexte</h2>
+          <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
+            Ce projet s’articule autour d’un logiciel de cybersécurité dont le code est open source : <a href="https://veracrypt.fr/en/Home.html">VeraCrypt</a>.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
+			Disponible sous Windows, Linux et macOS, VeraCrypt permet à ses utilisateurs de créer des volumes de stockage virtuels chiffrés 
+			dissimulables voire même de chiffrer directement des partitions du système d’exploitation sur lequel il est installé. <br>
+            VeraCrypt succède au logiciel TrueCrypt et est développé depuis fin 2014 par IDRIX, une société dirigée par Mounir Idrassi. 
+			Des ingénieurs volontaires contribuent aussi au développement du logiciel. 
           </p>
+		  <p>
+			Avec un total de plus de 1,2 million de téléchargements depuis juin 2013, VeraCrypt	est majoritairement téléchargé depuis des pays 
+			du nord du globe, tels que les États-Unis, la France, l’Allemagne, la Pologne ou encore la Russie. Les utilisateurs de ce logiciel 
+			présentent des profils variés ayant comme objectif commun de protéger leurs données. VeraCrypt est une référence dans son domaine. 
+			Il a notamment été intégré par Reporters Sans Frontières dans son Guide de Protection des Sources de 2021. VeraCrypt fait 
+			aussi partie des logiciels libres de droits préconisés par l’État français depuis son intégration au SILL en 2018.
+		  </p>
+		  <p>
+			La sécurité du code source de VeraCrypt a été auditée à deux reprises : une première fois en 2016 par Quarkslab, une entreprise 
+			française spécialisée dans la protection et l'analyse de logiciels, puis une deuxième fois en 2020 par le Fraunhofer Institute 
+			for Secure Information Technology au nom du Federal Office for Information Security (BSI) d’Allemagne.
+		  </p>
         </article>
 
         <!-- Work -->
-        <article id="work">
-          <h2 class="major">Work</h2>
-          <span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+        <article id="objectif">
+          <h2 class="major">Objectif</h2>
+          <!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span> -->
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            Actuellement, la sécurité du chiffrement de VeraCrypt est basée sur l’utilisation d’un mot de passe connu uniquement du propriétaire 
+			du volume. Ce dernier a également la possibilité d’utiliser un ou plusieurs fichiers additionnels afin de renforcer l’entropie de 
+			son mot de passe : les keyfiles. Ces fichiers, intégrés dans le processus cryptographique de VeraCrypt, peuvent être
+			assimilés à un facteur de double authentification.
           </p>
-          <p>
-            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-            Pellentesque condimentum sem. In efficitur ligula tate urna.
-            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-            libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-            tempus.
-          </p>
+		  <p>
+			Les keyfiles peuvent être stockés sur n'importe quel support, il est possible d’utiliser une mémoire amovible comme une clé USB par 
+			exemple. VeraCrypt permet aussi à ses utilisateurs de stocker leurs keyfiles sur une carte à puce de type PKCS#11, un type de carte 
+			est dédié à une utilisation cyber-sécuritaire.
+		  </p>
+		  <p>
+			Seulement, cette approche de stockage des keyfiles sur une carte PKCS#11, bien qu'étant la plus sécurisée, est dédiée à des 
+			utilisateurs appartenant au monde de la cybersécurité, qu’ils soient des professionnels ou des amateurs compétents. De plus, elle 
+			réduit drastiquement le déni plausible de l’utilisateur. La présence d’une carte PCKS#11 dans le portefeuille d’un reporter peut 
+			attirer l’attention et la suspicion des autorités lors de son passage par les douanes d’un état hostile.
+		  </p>
+		  <p>
+			L’utilisation de cartes à puce suivant la norme EMV est une alternative à l’approche mentionnée ci-dessus. Ces cartes de paiement sont 
+			répandues dans le monde entier pour une utilisation sans aucun lien avec le chiffrement de volumes virtuels. Avec le passeport, il s’agit 
+			certainement des deux dispositifs les plus répandus sur le globe et normés par des standards internationaux. La quasi-totalité des 
+			utilisateurs de VeraCrypt possèdent donc au moins une carte EMV.
+		  </p>
+		  <p>
+			Utiliser des données internes à la carte EMV du créateur du volume comme keyfiles est donc une façon de mettre en place sa double 
+			authentification.
+		  </p>
         </article>
 
         <!-- About -->
