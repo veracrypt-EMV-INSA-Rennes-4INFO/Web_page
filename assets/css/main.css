@@ -658,6 +658,9 @@ input, select, textarea {
 			top: 0;
 			width: 100%;
 		}
+			.image.insa::before{
+				width: 30%;
+			}
 
 		.image img {
 			border-radius: 4px;
@@ -703,6 +706,10 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+			
+				.image.main.insa img {
+					width: 30%;
+				}
 
 		@media screen and (max-width: 736px) {
 
