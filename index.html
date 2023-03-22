@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>EMVC</title>
+    <title>VeraCrypt</title>
     <link rel="shortcut icon" href="images/lock.webp" />
     <meta
       name="description"
@@ -32,7 +32,7 @@
         </div>
         <div class="content">
           <div class="inner">
-            <h1>EMVeraCryptez votre disque avec votre CB</h1>
+            <h1>Chiffrez votre disque avec votre CB</h1>
             <h5>
               Conception et implémentation d’un mécanisme d’authentification par
               carte à puce <br />
@@ -49,7 +49,7 @@
               <a href="#objectif"><b>Objectif</b></a>
             </li>
             <li>
-              <a href="#implementation"><b>Implémentation</b></a>
+              <a href="#specifications"><b>Spécifications</b></a>
             </li>
             <li>
               <a href="#equipe"><b>Équipe</b></a>
@@ -72,95 +72,104 @@
           <p>
             Ce projet s’articule autour d’un logiciel de cybersécurité dont le
             code est open source :
-            <a href="https://veracrypt.fr/en/Home.html">VeraCrypt</a>.
+            <a href="https://veracrypt.fr/en/Home.html"
+              ><strong>VeraCrypt</strong></a
+            >.
           </p>
           <p>
-            Disponible sous Windows, Linux et macOS, VeraCrypt permet à ses
-            utilisateurs de créer des volumes de stockage virtuels chiffrés
-            dissimulables voire même de chiffrer directement des partitions du
-            système d’exploitation sur lequel il est installé. <br />
+            Disponible notamment sous Windows, Linux et macOS, VeraCrypt permet
+            à ses utilisateurs de créer des
+            <strong>volumes de stockage virtuels chiffrés</strong> dissimulables
+            voire même de chiffrer directement des partitions du système
+            d’exploitation sur lequel il est installé.
+            <br />
             VeraCrypt succède au logiciel TrueCrypt et est développé depuis fin
             2014 par IDRIX, une société dirigée par Mounir Idrassi. Des
-            ingénieurs volontaires contribuent aussi au développement du
+            contributeurs extérieurs participent aussi au développement du
             logiciel.
           </p>
           <p>
-            Avec un total de plus de 1,2 million de téléchargements depuis juin
-            2013, VeraCrypt est majoritairement téléchargé depuis des pays du
-            nord du globe, tels que les États-Unis, la France, l’Allemagne, la
-            Pologne ou encore la Russie. Les utilisateurs de ce logiciel
-            présentent des profils variés ayant comme objectif commun de
-            protéger leurs données. VeraCrypt est une référence dans son
-            domaine. Il a notamment été intégré par Reporters Sans Frontières
-            dans son Guide de Protection des Sources de 2021. VeraCrypt fait
-            aussi partie des logiciels libres de droits préconisés par l’État
-            français depuis son intégration au SILL en 2018.
+            Téléchargé plusieurs millions de fois depuis juin 2013, VeraCrypt
+            est une <strong>référence</strong> dans le domaine de la
+            <strong>protection des données</strong>. Il a notamment été intégré
+            par <a href="https://rsf.org/fr">Reporters Sans Frontières</a> dans
+            son Guide de Protection des Sources de 2021. Préconisé par l'<a
+              href="https://www.ssi.gouv.fr/"
+              >ANSSI</a
+            >, VeraCrypt a été intégré en 2018 au
+            <a href="https://sill.etalab.gouv.fr/software"
+              >Socle Interministériel des Logiciels Libres</a
+            >.
           </p>
           <p>
-            La sécurité du code source de VeraCrypt a été auditée à deux
-            reprises : une première fois en 2016 par Quarkslab, une entreprise
-            française spécialisée dans la protection et l'analyse de logiciels,
-            puis une deuxième fois en 2020 par le Fraunhofer Institute for
-            Secure Information Technology au nom du Federal Office for
-            Information Security (BSI) d’Allemagne.
+            La <strong>sécurité</strong> du code source de VeraCrypt a été
+            <strong>auditée</strong> à deux reprises : une première fois en 2016
+            par <a href="https://www.quarkslab.com/fr/accueil/">Quarkslab</a>,
+            une entreprise française spécialisée dans la protection et l'analyse
+            de logiciels, puis une deuxième fois en 2020 par le
+            <i>Fraunhofer Institute for Secure Information Technology</i> au nom
+            du
+            <a href="https://www.bsi.bund.de/EN/Home/home_node.html"
+              >Federal Office for Information Security (BSI)</a
+            >
+            d’Allemagne.
           </p>
         </article>
 
         <!-- Objectif -->
         <article id="objectif">
-          <h2 class="major">Quel est notre but ?</h2>
+          <h2 class="major">Quel est le but ?</h2>
           <p>
             Actuellement, la sécurité du chiffrement de VeraCrypt est basée sur
             l’utilisation d’un mot de passe connu uniquement du propriétaire du
             volume. Ce dernier a également la possibilité d’utiliser un ou
             plusieurs fichiers additionnels afin de renforcer l’entropie de son
-            mot de passe : les keyfiles. Ces fichiers, intégrés dans le
-            processus cryptographique de VeraCrypt, peuvent être assimilés à un
-            facteur de double authentification.
+            mot de passe : les <strong>keyfiles</strong>. Ces fichiers, intégrés
+            dans le processus cryptographique de VeraCrypt, peuvent être
+            assimilés à un facteur de double authentification.
           </p>
           <p>
             Les keyfiles peuvent être stockés sur n'importe quel support, il est
             possible d’utiliser une mémoire amovible comme une clé USB par
             exemple. VeraCrypt permet aussi à ses utilisateurs de stocker leurs
-            keyfiles sur une carte à puce de type PKCS#11, un type de carte est
-            dédié à une utilisation cyber-sécuritaire.
+            keyfiles sur une carte à puce suivant le
+            <strong>standard PKCS#11</strong>, un type de carte est dédié à une
+            utilisation cyber-sécuritaire.
           </p>
           <p>
             Seulement, cette approche de stockage des keyfiles sur une carte
-            PKCS#11, bien qu'étant la plus sécurisée, est dédiée à des
-            utilisateurs appartenant au monde de la cybersécurité, qu’ils soient
-            des professionnels ou des amateurs compétents. De plus, elle réduit
-            drastiquement le déni plausible de l’utilisateur. La présence d’une
+            PKCS#11, bien qu'étant la plus sécurisée, réduit drastiquement le
+            <strong>déni plausible</strong> de l’utilisateur. La présence d’une
             carte PCKS#11 dans le portefeuille d’un reporter peut attirer
             l’attention et la suspicion des autorités lors de son passage par
             les douanes d’un état hostile.
           </p>
           <p>
-            L’utilisation de cartes à puce suivant la norme EMV est une
-            alternative à l’approche mentionnée ci-dessus. Ces cartes de
-            paiement sont répandues dans le monde entier pour une utilisation
-            sans aucun lien avec le chiffrement de volumes virtuels. Avec le
-            passeport, il s’agit certainement des deux dispositifs les plus
-            répandus sur le globe et normés par des standards internationaux. La
-            quasi-totalité des utilisateurs de VeraCrypt possèdent donc au moins
-            une carte EMV.
+            L’utilisation de cartes à puce suivant la
+            <strong>norme EMV</strong> est une alternative à l’approche
+            mentionnée ci-dessus. Ces cartes de paiement sont répandues dans le
+            monde entier pour une utilisation sans aucun lien avec le
+            chiffrement de volumes virtuels. Avec le passeport, il s’agit
+            certainement des deux dispositifs les plus répandus sur le globe et
+            normés par des standards internationaux. La quasi-totalité des
+            utilisateurs de VeraCrypt possèdent donc au moins une carte EMV.
           </p>
           <p>
-            Utiliser des données internes à la carte EMV du créateur du volume
-            comme keyfiles est donc une façon de mettre en place sa double
-            authentification.
+            Utiliser des <strong>données internes</strong> à la carte EMV du
+            créateur du volume comme keyfiles est donc une façon de mettre en
+            place sa double authentification.
           </p>
         </article>
 
         <!-- Implémentation -->
-        <article id="implementation">
-          <h2 class="major">Qu'avons nous réalisé ?</h2>
+        <article id="specifications">
+          <h2 class="major">Comment le réaliser ?</h2>
           <h4>Philosophie du projet</h4>
           <p>
-            Tout au long de ce projet, nous avons dû apporter nos modifications
-            au code source d'une application existante. Nous devions nous
-            assurer que nous n'introduisions pas de failles de sécurité, que
-            notre code s'intégrait naturellement dans le code existant, que nos
+            Tout au long de ce projet, des modifications ont été apportées au
+            code source d'une application existante. Il a fallu s'assurer
+            qu'aucune faille de sécurité n'était introduite, que le code produit
+            s'intégrait naturellement dans le code existant, que les
             modifications étaient minimes afin de faciliter la relecture par
             d'autre développeurs et enfin que l'interface restait sensiblement
             le même pour que l'utilisateur ne soit pas trop perturbé par ces
@@ -176,19 +185,19 @@
           <p>
             Selon la norme ISO/IEC 7816 sur laquelle s’appuie le standard EMV
             pour la communication avec contact, le dialogue avec la carte à puce
-            se fait à l'aide de commandes APDU dont la structure contient de
-            nombreux champs permettant de préciser quelles informations
-            extraire.
+            se fait à l'aide de <strong>commandes APDU</strong> dont la
+            structure contient de nombreux paramètres permettant de préciser
+            quelles informations extraire.
           </p>
           <p>
-            Le module EMVExtractor a donc été imaginé pour assurer la
-            communication entre VeraCrypt et la carte EMV à travers le lecteur
-            de cartes de l’utilisateur. Pour faire face à la diversité de
-            lecteurs sur le marché, Microsoft a développé le standard de
-            communication Personal Computer/Smart Card. Notre choix s'est tourné
-            vers la librairie Winscard suivant ce standard et étant disponible à
-            la fois nativement sous Windows, mais aussi sous Linux ou macOS via
-            le paquet PCSCLite.
+            Le <strong>module EMVExtractor</strong> a donc été imaginé pour
+            assurer la communication entre VeraCrypt et la carte EMV à travers
+            le lecteur de cartes de l’utilisateur. Pour faire face à la
+            diversité de lecteurs sur le marché, Microsoft a développé le
+            standard de communication Personal Computer/Smart Card. Le choix
+            s'est tourné vers la librairie Winscard suivant ce standard et étant
+            disponible à la fois nativement sous Windows, mais aussi sous Linux
+            ou macOS via le paquet PCSCLite.
           </p>
 
           <span class="image main pcsc"
@@ -196,20 +205,21 @@
           /></span>
           <p>
             Concernant les données à extraire de la carte EMV pour les utiliser
-            comme keyfiles, les certificats ICC Public Key Certificate et ISSUER
-            Public Key Certificate ainsi que les données Card Production Life
-            Cycle ont été retenus de part leurs unicité propre à la carte.
+            comme keyfiles, les certificats
+            <strong>ICC Public Key Certificate</strong> et
+            <strong>ISSUER Public Key Certificate</strong> ainsi que les données
+            <strong>Card Production Life Cycle</strong> ont été retenus de part
+            leurs unicité propre à la carte.
           </p>
           <hr />
           <h4>Modification de VeraCrypt</h4>
           <p>
-            Réinventer la roue étant inutile, nous nous sommes inspiré de
-            l'implémentation actuelle de l'utilisation de cartes PKCS#11 dans
-            VeraCrypt et l'avons adaptée pour les cartes EMV. Nous avons donc
-            réutilisé la fenêtre de selection des keyfiles sur des cartes à puce
-            et y avons ajouté un modèle dédié aux cartes EMV. Les quatre
-            derniers chiffres des numéros des cartes EMV connectées sont
-            affichés pour en permettre la sélection.
+            Réinventer la roue étant inutile, l'implémentation pour les cartes
+            EMV est inspirée de celle actuelle pour l'utilisation de cartes
+            PKCS#11 dans VeraCrypt. La fenêtre de sélection des keyfiles sur des
+            cartes à puce a donc été réutilisée : un modèle dédié aux cartes EMV
+            y a été ajouté. Les quatre derniers chiffres des numéros des cartes
+            EMV connectées sont affichés pour en permettre la sélection.
           </p>
           <span class="image main pcsc"
             ><img src="images/new_interface.png" alt=""
@@ -221,9 +231,9 @@
           </p>
           <p>
             En général les utilisateurs de logiciel de cybersécurité aiment être
-            en maîtrise complète de fonctionnalités de l’application. Ainsi,
-            nous avons rendu optionnelle la fonctionnalité EMV (désactivée par
-            défaut) dans les paramètres du logiciel.
+            en maîtrise complète de fonctionnalités de l’application. Ainsi, la
+            fonctionnalité EMV est <strong>optionnelle</strong>
+            et désactivée par défaut dans les paramètres du logiciel.
           </p>
         </article>
 
@@ -274,7 +284,7 @@
           </ul>
           <p>
             Ce projet académique, réalisé sur l'année 2022-2023, est encadré par
-            messieurs Gildas AVOINE et Jules DUPAS.
+            Gildas AVOINE et Jules DUPAS.
           </p>
         </article>
 
@@ -282,35 +292,47 @@
         <article id="code">
           <h2 class="major">Un coup d'oeil ?</h2>
           <p>
-            Afin de faciliter le stockage et la gestion des productions de ce
-            projet, nous avons créé une
-            <b>organisation sur Github</b> disponible ici
+            L'entièreté des productions de ce projet est répartie dans les
+            dépôts dédiés de l'<b>organisation Github</b>
             <a
               href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO"
               class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >. L'entièreté du code que nous avons produit y est réparti dans des
-            dépôts dédiés.
+            ></a>
+            de l'équipe.
           </p>
           <ul class="alt">
             <li>
-              <a href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/VeraCrypt_EMV"><strong>VeraCrypt_EMV</strong></a> est un fork du code source de
-              VeraCrypt que nous avons modifié sur la branche <i>dev</i> pour y
-              ajouter notre fonctionnalité.
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/VeraCrypt_EMV"
+                ><strong>VeraCrypt_EMV</strong></a
+              >
+              est un fork du code source de VeraCrypt, modifié sur la branche
+              <i>dev</i> pour y ajouter la fonctionnalité EMV.
             </li>
             <li>
-              <a href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/EMV_Extractor"><strong>EMV_Extractor</strong></a> contient un POC en python et sa
-              traduction en c++ permettant d'extraire les certificats et données
-              de cartes à puce de type EMV.
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/EMV_Extractor"
+                ><strong>EMV_Extractor</strong></a
+              >
+              contient un POC en python et sa traduction en C++ permettant
+              d'extraire les certificats et données de cartes à puce de type
+              EMV.
             </li>
             <li>
-              <a href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Web_page"><strong>Web_page</strong></a> correspond au code source de la page que
-              vous êtes actuellement en train de regarder.
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Web_page"
+                ><strong>Web_page</strong></a
+              >
+              correspond au code source de la page que vous êtes actuellement en
+              train de regarder.
             </li>
             <li>
-              <a href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Reports"><strong>Rapports</strong></a> stocke les versions PDF des rapports que
-              nous avons écrit tout au long des différentes phases du projet (en
-              français uniquement).
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Reports"
+                ><strong>Rapports</strong></a
+              >
+              stocke les versions PDF des rapports écrits tout au long des
+              différentes phases du projet (en français uniquement).
             </li>
           </ul>
         </article>

@@ -659,7 +659,7 @@ input, select, textarea {
 			width: 100%;
 		}
 			.image.insa::before{
-				width: 30%;
+				width: 50%;
 			}
 			.image.pcsc::before{
 				opacity: 0;
@@ -711,7 +711,7 @@ input, select, textarea {
 			}
 			
 				.image.main.insa img {
-					width: 30%;
+					width: 50%;
 				}
 
 		@media screen and (max-width: 736px) {
