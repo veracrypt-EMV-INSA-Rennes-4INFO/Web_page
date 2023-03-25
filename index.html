@@ -89,7 +89,7 @@
             logiciel.
           </p>
           <p>
-            Téléchargé plusieurs millions de fois depuis juin 2013, VeraCrypt
+            Téléchargé plusieurs millions de fois depuis juin 2014, VeraCrypt
             est une <strong>référence</strong> dans le domaine de la
             <strong>protection des données</strong>. Il a notamment été intégré
             par <a href="https://rsf.org/fr">Reporters Sans Frontières</a> dans
@@ -118,7 +118,7 @@
 
         <!-- Objectif -->
         <article id="objectif">
-          <h2 class="major">Quel est le but ?</h2>
+          <h2 class="major">Quel est l'objectif ?</h2>
           <p>
             Actuellement, la sécurité du chiffrement de VeraCrypt est basée sur
             l’utilisation d’un mot de passe connu uniquement du propriétaire du
@@ -133,12 +133,14 @@
             possible d’utiliser une mémoire amovible comme une clé USB par
             exemple. VeraCrypt permet aussi à ses utilisateurs de stocker leurs
             keyfiles sur une carte à puce suivant le
-            <strong>standard PKCS#11</strong>, un type de carte est dédié à une
-            utilisation cyber-sécuritaire.
+            <strong>standard PKCS#11</strong>, une API définissant une interface
+            générique pour les périphériques cryptographiques.
           </p>
           <p>
             Seulement, cette approche de stockage des keyfiles sur une carte
-            PKCS#11, bien qu'étant la plus sécurisée, réduit drastiquement le
+            PKCS#11, bien qu'étant la plus sécurisée, est dédiée à des
+            utilisateurs ayant un minimum de compétences en cybersécurité. De
+            plus, elle réduit drastiquement le
             <strong>déni plausible</strong> de l’utilisateur. La présence d’une
             carte PCKS#11 dans le portefeuille d’un reporter peut attirer
             l’attention et la suspicion des autorités lors de son passage par
@@ -172,13 +174,13 @@
             s'intégrait naturellement dans le code existant, que les
             modifications étaient minimes afin de faciliter la relecture par
             d'autre développeurs et enfin que l'interface restait sensiblement
-            le même pour que l'utilisateur ne soit pas trop perturbé par ces
+            la même pour que l'utilisateur ne soit pas trop perturbé par ces
             changements.
           </p>
           <p>
-            Techniquement, ce projet se divise en deux étapes : l'extraction des
-            données d'une carte EMV et la modification du code source de
-            VeraCrypt afin d'ajouter cette fonctionnalité.
+            Techniquement, ce projet se divise en deux étapes : la compréhension
+            du fonctionnement des cartes EMV et la modification du code source
+            de VeraCrypt afin d'ajouter cette fonctionnalité.
           </p>
           <hr />
           <h4>Extraction des données EMV</h4>
@@ -209,29 +211,29 @@
             <strong>ICC Public Key Certificate</strong> et
             <strong>ISSUER Public Key Certificate</strong> ainsi que les données
             <strong>Card Production Life Cycle</strong> ont été retenus de part
-            leurs unicité propre à la carte.
+            leur unicité propre à la carte.
           </p>
           <hr />
           <h4>Modification de VeraCrypt</h4>
           <p>
-            Réinventer la roue étant inutile, l'implémentation pour les cartes
-            EMV est inspirée de celle actuelle pour l'utilisation de cartes
-            PKCS#11 dans VeraCrypt. La fenêtre de sélection des keyfiles sur des
-            cartes à puce a donc été réutilisée : un modèle dédié aux cartes EMV
-            y a été ajouté. Les quatre derniers chiffres des numéros des cartes
-            EMV connectées sont affichés pour en permettre la sélection.
+            L'implémentation pour les cartes EMV est inspirée de celle
+            développée pour l'utilisation de cartes PKCS#11 dans VeraCrypt. La
+            fenêtre de sélection des keyfiles sur des cartes à puce a donc été
+            réutilisée : un modèle dédié aux cartes EMV y a été ajouté. Les
+            quatre derniers chiffres des numéros des cartes EMV connectées sont
+            affichés pour en permettre la sélection.
           </p>
           <span class="image main pcsc"
             ><img src="images/new_interface.png" alt=""
           /></span>
           <p>
             Les cartes de type EMV n'étant disponibles qu'en lecture, certaines
-            fonctionnalité comme la suppression de données (bouton
+            fonctionnalités comme la suppression de données (bouton
             <i>Effacer</i>) ont été désactivées.
           </p>
           <p>
             En général les utilisateurs de logiciel de cybersécurité aiment être
-            en maîtrise complète de fonctionnalités de l’application. Ainsi, la
+            en maîtrise complète des fonctionnalités de l’application. Ainsi, la
             fonctionnalité EMV est <strong>optionnelle</strong>
             et désactivée par défaut dans les paramètres du logiciel.
           </p>
@@ -245,7 +247,7 @@
           /></span>
           <p>
             Notre équipe est constituée de 7 étudiants en 4ème année au
-            département informatique de l'INSA de Rennes :
+            département informatique de l'INSA Rennes :
           </p>
           <ul>
             <li>
