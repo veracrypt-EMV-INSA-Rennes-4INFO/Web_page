@@ -6,7 +6,12 @@
 -->
 <html>
   <head>
-    <title>EMVC</title>
+    <title>VeraCrypt</title>
+    <link rel="shortcut icon" href="images/lock.webp" />
+    <meta
+      name="description"
+      content="Mécanisme d’authentification par carte à puce pour le chiffrement de disques durs par le logiciel VeraCrypt"
+    />
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -29,106 +34,301 @@
           <div class="inner">
             <h1>Encrypt your drive with your credit card</h1>
             <h5>
-                Todo, or not todo, that is the question.
+              Design and implementation of a smart card authentication mechanism
+              <br />
+              for hard disk encryption using the VeraCrypt software
             </h5>
           </div>
         </div>
         <nav>
           <ul>
             <li>
-              <a href="#contexte"> <b>Context</b></a>
+              <a href="#context"> <b>Context</b></a>
             </li>
             <li>
-              <a href="#objectif"><b>Objective</b></a>
+              <a href="#objective"><b>Objective</b></a>
             </li>
             <li>
-              <a href="#about"><b>Implementation</b></a>
+              <a href="#specifications"><b>Specifications</b></a>
             </li>
             <li>
-              <a href="#contact"><b>Team</b></a>
+              <a href="#team"><b>Team</b></a>
             </li>
             <li>
-              <a href="#elements"><b>Code</b></a>
+              <a href="#code"><b>Code</b></a>
             </li>
+            <!-- <li>
+              <a href="#elements"><b>Elements</b></a>
+            </li> -->
           </ul>
         </nav>
       </header>
 
       <!-- Main -->
       <div id="main">
-        <!-- Intro -->
-        <article id="contexte">
-          <h2 class="major">Contexte</h2>
-          <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
+        <!-- Contexte -->
+        <article id="context">
+          <h2 class="major">What is VeraCrypt ?</h2>
           <p>
-            Ce projet s’articule autour d’un logiciel de cybersécurité dont le code est open source : <a href="https://veracrypt.fr/en/Home.html">VeraCrypt</a>.
+            This project is based on an open source cybersecurity software :
+            <a href="https://veracrypt.fr/en/Home.html"
+              ><strong>VeraCrypt</strong></a
+            >.
           </p>
           <p>
-			Disponible sous Windows, Linux et macOS, VeraCrypt permet à ses utilisateurs de créer des volumes de stockage virtuels chiffrés 
-			dissimulables voire même de chiffrer directement des partitions du système d’exploitation sur lequel il est installé. <br>
-            VeraCrypt succède au logiciel TrueCrypt et est développé depuis fin 2014 par IDRIX, une société dirigée par Mounir Idrassi. 
-			Des ingénieurs volontaires contribuent aussi au développement du logiciel. 
+            Available for Windows, Linux and macOS, VeraCrypt allows its users
+            to create
+            <strong>encrypted virtual storage volumes</strong> hideable or even
+            encrypt partitions of the operating system on which it is installed.
+            <br />
+            VeraCrypt is the successor to TrueCrypt software and has been
+            developed since mid 2013 by
+            <a href="https://www.idrix.fr/">IDRIX</a>, a company headed by
+            Mounir Idrassi. External contributors are also involved in the
+            development of the software.
           </p>
-		  <p>
-			Avec un total de plus de 1,2 million de téléchargements depuis juin 2013, VeraCrypt	est majoritairement téléchargé depuis des pays 
-			du nord du globe, tels que les États-Unis, la France, l’Allemagne, la Pologne ou encore la Russie. Les utilisateurs de ce logiciel 
-			présentent des profils variés ayant comme objectif commun de protéger leurs données. VeraCrypt est une référence dans son domaine. 
-			Il a notamment été intégré par Reporters Sans Frontières dans son Guide de Protection des Sources de 2021. VeraCrypt fait 
-			aussi partie des logiciels libres de droits préconisés par l’État français depuis son intégration au SILL en 2018.
-		  </p>
-		  <p>
-			La sécurité du code source de VeraCrypt a été auditée à deux reprises : une première fois en 2016 par Quarkslab, une entreprise 
-			française spécialisée dans la protection et l'analyse de logiciels, puis une deuxième fois en 2020 par le Fraunhofer Institute 
-			for Secure Information Technology au nom du Federal Office for Information Security (BSI) d’Allemagne.
-		  </p>
+          <p>
+            Downloaded several million times since June 2013, VeraCrypt is a
+            <strong>reference</strong> in the field of
+            <strong>data protection</strong>. It has been included by
+            <a href="https://rsf.org/fr">Reporters Without Borders</a> in its
+            2021 Source Protection Guide. Recommended by the
+            <a href="https://www.ssi.gouv.fr/">ANSSI</a>, VeraCrypt was also
+            included in the
+            <a href="https://sill.etalab.gouv.fr/software"
+              >Socle Interministériel des Logiciels Libres</a
+            >
+            , a catalog managed by
+            <a href="https://www.numerique.gouv.fr/dinum/">DINUM</a>, in 2018.
+          </p>
+          <p>
+            The <strong>security</strong> of the VeraCrypt source code has been
+            <strong>audited</strong> twice : a first time in 2016 by
+            <a href="https://www.quarkslab.com/fr/accueil/">Quarkslab</a>, a
+            French company specialized in software protection and analysis, and
+            again in 2020 by the
+            <i>Fraunhofer Institute for Secure Information Technology</i> on
+            behalf of the
+            <a href="https://www.bsi.bund.de/EN/Home/home_node.html"
+              >Federal Office for Information Security (BSI)</a
+            >
+            of Germany.
+          </p>
         </article>
 
-        <!-- Work -->
-        <article id="objectif">
-          <h2 class="major">Objectif</h2>
-          <!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span> -->
+        <!-- Objectif -->
+        <article id="objective">
+          <h2 class="major">What is the goal ?</h2>
           <p>
-            Actuellement, la sécurité du chiffrement de VeraCrypt est basée sur l’utilisation d’un mot de passe connu uniquement du propriétaire 
-			du volume. Ce dernier a également la possibilité d’utiliser un ou plusieurs fichiers additionnels afin de renforcer l’entropie de 
-			son mot de passe : les keyfiles. Ces fichiers, intégrés dans le processus cryptographique de VeraCrypt, peuvent être
-			assimilés à un facteur de double authentification.
+            Currently, the security of VeraCrypt's encryption is based on the
+            use of a password known only to the owner of the volume. The latter
+            also has the possibility to use one or more additional files to
+            reinforce the entropy of his password: the
+            <strong>keyfiles</strong>. These files, integrated in the
+            cryptographic process of VeraCrypt, can be considered as a double
+            authentication factor.
           </p>
-		  <p>
-			Les keyfiles peuvent être stockés sur n'importe quel support, il est possible d’utiliser une mémoire amovible comme une clé USB par 
-			exemple. VeraCrypt permet aussi à ses utilisateurs de stocker leurs keyfiles sur une carte à puce de type PKCS#11, un type de carte 
-			est dédié à une utilisation cyber-sécuritaire.
-		  </p>
-		  <p>
-			Seulement, cette approche de stockage des keyfiles sur une carte PKCS#11, bien qu'étant la plus sécurisée, est dédiée à des 
-			utilisateurs appartenant au monde de la cybersécurité, qu’ils soient des professionnels ou des amateurs compétents. De plus, elle 
-			réduit drastiquement le déni plausible de l’utilisateur. La présence d’une carte PCKS#11 dans le portefeuille d’un reporter peut 
-			attirer l’attention et la suspicion des autorités lors de son passage par les douanes d’un état hostile.
-		  </p>
-		  <p>
-			L’utilisation de cartes à puce suivant la norme EMV est une alternative à l’approche mentionnée ci-dessus. Ces cartes de paiement sont 
-			répandues dans le monde entier pour une utilisation sans aucun lien avec le chiffrement de volumes virtuels. Avec le passeport, il s’agit 
-			certainement des deux dispositifs les plus répandus sur le globe et normés par des standards internationaux. La quasi-totalité des 
-			utilisateurs de VeraCrypt possèdent donc au moins une carte EMV.
-		  </p>
-		  <p>
-			Utiliser des données internes à la carte EMV du créateur du volume comme keyfiles est donc une façon de mettre en place sa double 
-			authentification.
-		  </p>
+          <p>
+            Keyfiles can be stored on any media, it is possible to use a
+            removable memory such as a USB key for example. VeraCrypt also
+            allows its users to store their keyfiles on a smart card compliant
+            with the <strong>PKCS#11 standard</strong>, an API defining a
+            generic interface for cryptographic devices.
+          </p>
+          <p>
+            However, this approach of storing keyfiles on a PKCS#11 card,
+            although the most secure, is dedicated to users with minimal
+            cybersecurity skills. Moreover, it drastically reduces the
+            <strong>plausible deniability</strong> of the user. The presence of
+            a PCKS#11 card in a reporter's wallet may attract the attention and
+            suspicion of authorities when passing through customs in a hostile
+            state.
+          </p>
+          <p>
+            An alternative to the above mentioned approach is the use of smart
+            cards compliant with the <strong>EMV standard</strong>. These
+            payment cards are widely used all over the world without any
+            connection to the encryption of virtual volumes. Together with the
+            passport, these are certainly the two most widely used devices on
+            the globe and standardized by international standards. Almost all
+            VeraCrypt users have at least one EMV card.
+          </p>
+          <p>
+            Using the <strong>internal data</strong> of the volume creator's EMV
+            card as keyfiles is therefore a way to set up his double
+            authentication.
+          </p>
         </article>
 
-        <!-- About -->
-        <article id="about">
-          <h2 class="major">About</h2>
-          <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+        <!-- Implémentation -->
+        <article id="specifications">
+          <h2 class="major">How to reach it ?</h2>
+          <h4>Project pholosophy</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
+            Throughout this project, changes were made to the source code of an
+            existing application. We had to make sure that no security breaches
+            were introduced, that the code produced was naturally integrated
+            into the existing code, that the modifications were minimal in order
+            to facilitate the re-reading by other developers and finally that
+            the interface remained substantially the same so that the user
+            wouldn't be not too disturbed by these changes.
           </p>
+          <p>
+            Technically, this project is divided into two steps: understanding
+            how EMV cards work and modifying the VeraCrypt source code to add
+            this functionality.
+          </p>
+          <hr />
+          <h4>Study of EMV cards</h4>
+          <p>
+            According to the ISO/IEC 7816 standard on which the EMV standard for
+            contact communication is based, the dialogue with the smart card is
+            carried out with the help of <strong>APDU commands</strong>, the
+            structure of which contains numerous parameters that make it
+            possible to specify which information to extract.
+          </p>
+          <p>
+            The <strong>EMVExtractor module</strong> was therefore designed to
+            ensure communication between VeraCrypt and the EMV card through the
+            user's card reader. To cope with the diversity of readers on the
+            market, Microsoft has developed the Personal Computer/Smart Card
+            communication standard. The choice was made to use the Winscard
+            library, which follows this standard and is available natively under
+            Windows, but also under Linux or macOS via the PCSCLite package.
+          </p>
+
+          <span class="image main pcsc"
+            ><img src="images/interface.png" alt=""
+          /></span>
+          <p>
+            Concerning the data to be extracted from the EMV card to be used as
+            keyfiles, the <strong>ICC Public Key Certificate</strong> and
+            <strong>ISSUER Public Key Certificate</strong> as well as the
+            <strong>Card Production Life Cycle</strong> data have been retained
+            because they are unique to the card.
+          </p>
+          <hr />
+          <h4>Modification of VeraCrypt</h4>
+          <p>
+            The implementation for EMV cards is inspired by the one developed
+            for the use of PKCS#11 cards in VeraCrypt. The window for selecting
+            keyfiles on smart cards has been reused: a template dedicated to EMV
+            cards has been added. The last four digits of the connected EMV card
+            numbers are displayed for selection.
+          </p>
+          <span class="image main pcsc"
+            ><img src="images/new_interface_en.png" alt=""
+          /></span>
+          <p>
+            Since EMV cards are read-only, some features such as data deletion
+            (<i>Delete</i> button) have been disabled.
+          </p>
+          <p>
+            In general, cybersecurity software users like to be in full control
+            of the application's functionality. Thus, the EMV functionality is
+            <strong>optional</strong> and disabled by default in the software
+            settings.
+          </p>
+        </article>
+
+        <!-- Équipe -->
+        <article id="equipe">
+          <h2 class="major">Qui sommes nous ?</h2>
+          <span class="image main insa"
+            ><img src="images/Logo_INSARennes-developpe-blanc-rvb.png" alt=""
+          /></span>
+          <p>
+            Notre équipe est constituée de 7 étudiants en 4ème année au
+            département informatique de l'INSA Rennes :
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/mathis-caisson-167574224"
+                >Mathis CAISSON</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/andrei-cocan-b9193b232/"
+                >Andrei COCAN</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/guilhem-grac-3429a6218/"
+                >Guilhem GRAC</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/dorian-humeau-305864231/"
+                >Dorian HUMEAU</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/le-roux-francois/"
+                >François LE ROUX</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/mathis-mauvisseau"
+                >Mathis MAUVISSEAU</a
+              >
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/bricenamy">Brice NAMY</a>
+            </li>
+          </ul>
+          <p>
+            Ce projet académique, réalisé sur l'année 2022-2023, est encadré par
+            Gildas AVOINE et Jules DUPAS.
+          </p>
+        </article>
+
+        <!-- Code -->
+        <article id="code">
+          <h2 class="major">Un coup d'oeil ?</h2>
+          <p>
+            L'entièreté des productions de ce projet est répartie dans les
+            dépôts dédiés de l'<b>organisation Github</b>
+            <a
+              href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO"
+              class="icon brands fa-github"
+            ></a>
+            de l'équipe.
+          </p>
+          <ul class="alt">
+            <li>
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/VeraCrypt_EMV"
+                ><strong>VeraCrypt_EMV</strong></a
+              >
+              est un fork du code source de VeraCrypt, modifié sur la branche
+              <i>dev</i> pour y ajouter la fonctionnalité EMV.
+            </li>
+            <li>
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/EMV_Extractor"
+                ><strong>EMV_Extractor</strong></a
+              >
+              contient un POC en python et sa traduction en C++ permettant
+              d'extraire les certificats et données de cartes à puce de type
+              EMV.
+            </li>
+            <li>
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Web_page"
+                ><strong>Web_page</strong></a
+              >
+              correspond au code source de la page que vous êtes actuellement en
+              train de regarder.
+            </li>
+            <li>
+              <a
+                href="https://github.com/veracrypt-EMV-INSA-Rennes-4INFO/Reports"
+                ><strong>Rapports</strong></a
+              >
+              stocke les versions PDF des rapports écrits tout au long des
+              différentes phases du projet (en français uniquement).
+            </li>
+          </ul>
         </article>
 
         <!-- Contact -->
@@ -488,14 +688,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         </article>
       </div>
 
-	  <br><a href="./index.html" target="_top" id="version">Version française</a>
-
-
       <!-- Footer -->
       <footer id="footer">
-        <p class="copyright">
-          &copy; Send bitcoin or get hacked >_</a>
-        </p>
+        <a href="./index.html" target="_top" id="version">Version française</a>
       </footer>
     </div>
 
